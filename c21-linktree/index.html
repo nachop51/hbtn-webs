@@ -23,6 +23,7 @@
   <!-- Favicon & CSS -->
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css" />
+  <!-- <link rel="stylesheet" href="css/outputdev.css" /> -->
 
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,96 +47,79 @@
       </p>
     </header>
     <main class="main">
-      <section class="groups">
-        <article>
-          <a href="https://storyme-lp.my.canva.site/home/" class="card" target="_blank" rel="noreferrer"
-            alt="Story Me project">
-            <div class="card-image">
-              <img src="./images/storyme.png" title="Story Me project logo" alt="Story Me project logo" />
-            </div>
-            <div class="card-text">
-              <h2>Story Me</h2>
-              <p class="card-text">
-                App de cuentos enfocada al público infantil, donde cada experiencia es única mediante la ilustración de
-                imágenes generada por IA.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article>
-          <a href="https://www.gymlink.tech/" class="card" target="_blank" rel="noreferrer" title="Gymlink project">
-            <div class="card-image">
-              <img src="./images/gymlink.png" alt="Gymlink project logo" title="Gymlink project logo" />
-            </div>
-            <div class="card-text">
-              <h2>Gymlink</h2>
-              <p class="card-text">
-                Aplicación para facilitar la gestión y organización de gimnasios, brindando soluciones eficientes a
-                ambas partes del negocio.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article>
-          <a href="https://apparcar.tech/" class="card" target="_blank" rel="noreferrer" title="Apparcar project">
-            <div class="card-image">
-              <img src="./images/apparcar.png" alt="Apparcar project logo" title="Apparcar project logo" />
-            </div>
-            <div class="card-text">
-              <h2>Apparcar</h2>
-              <p class="card-text">
-                Aplicación que ofrece un sistema de reserva de estacionamientos físicos.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article>
-          <a href="https://dame1namano.wixsite.com/dameunamano" class="card" target="_blank" rel="noreferrer"
-            title="Dame una Mano project">
-            <div class="card-image">
-              <img src="./images/dameunamano.png" alt="Dame una Mano project logo" title="Dame una Mano project logo" />
-            </div>
-            <div class="card-text">
-              <h2>Dame una Mano</h2>
-              <p class="card-text">
-                Aplicación que ofrece un espacio en el cual los usuarios pueden encontrar profesionales de una forma
-                sencilla.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article>
-          <a href="https://holbertonmobile.wixsite.com/website" class="card" target="_blank" rel="noreferrer"
-            title="Holberton Mobile project">
-            <div class="card-image">
-              <img src="./images/holbertonmobile.png" alt="Holberton Mobile project logo"
-                title="Holberton Mobile project logo" />
-            </div>
-            <div class="card-text">
-              <h2>Holberton Mobile</h2>
-              <p class="card-text">
-                Aplicación que adapta la intranet de Holberton para dispositivos móviles, presentando actualizaciones y
-                mejorías.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article>
-          <a href="https://map-it-app.netlify.app/" class="card" target="_blank" rel="noreferrer" title="MapIt project">
-            <div class="card-image">
-              <img src="./images/mapit.png" alt="MapIt project logo" title="MapIt project logo" />
-            </div>
-            <div class="card-text">
-              <h2>MapIt</h2>
-              <p class="card-text">
-                Aplicación móvil para compartir experiencias, puntos o recomendaciones con amigos.
-              </p>
-            </div>
-          </a>
-        </article>
+      <section class="groups" style="grid-template-rows: 1fr !important">
+
       </section>
     </main>
   </div>
+
+  <script type="module">
+    const content = [
+      {
+        title: 'Story Me',
+        description: 'App de cuentos enfocada al público infantil, donde cada experiencia es única mediante la ilustración de imágenes generada por IA.',
+        link: 'https://storyme-lp.my.canva.site/home/',
+        image: './images/storyme.png'
+      },
+      {
+        title: 'Gymlink',
+        description: 'Aplicación para facilitar la gestión y organización de gimnasios, brindando soluciones eficientes a ambas partes del negocio.',
+        link: 'https://www.gymlink.tech/',
+        image: './images/gymlink.png'
+      },
+      {
+        title: 'Apparcar',
+        description: 'Aplicación que ofrece un sistema de reserva de estacionamientos físicos.',
+        link: 'https://apparcar.tech/',
+        image: './images/apparcar.png'
+      },
+      {
+        title: 'Dame una Mano',
+        description: 'Aplicación que ofrece un espacio en el cual los usuarios pueden encontrar profesionales de una forma sencilla.',
+        link: 'https://dame1namano.wixsite.com/dameunamano',
+        image: './images/dameunamano.png'
+      },
+      {
+        title: 'Holberton Mobile',
+        description: 'Aplicación que adapta la intranet de Holberton para dispositivos móviles, presentando actualizaciones y mejorías.',
+        link: 'https://holbertonmobile.tech',
+        image: './images/holbertonmobile.png'
+      },
+      {
+        title: 'MapIt',
+        description: 'Aplicación móvil para compartir experiencias, puntos o recomendaciones con amigos.',
+        link: 'https://map-it-app.netlify.app/',
+        image: './images/mapit.png'
+      }
+    ]
+
+    function createArticles() {
+      const articles = []
+      const groups = document.querySelector('.groups')
+
+      content.forEach((item) => {
+        const article = document.createElement('article')
+        article.innerHTML = `
+          <a href="${item.link}" class="card" target="_blank" rel="noreferrer" title="${item.title} project">
+            <div class="card-image">
+              <img src="${item.image}" alt="${item.title} project logo" title="${item.title} project logo" />
+            </div>
+            <div class="card-text">
+              <h2>${item.title}</h2>
+              <p class="card-text">${item.description}</p>
+            </div>
+          </a>
+        `
+        articles.push(article)
+      })
+
+      articles.forEach((article) => {
+        groups.appendChild(article)
+      })
+    }
+
+    createArticles()
+  </script>
 </body>
 
 </html>
