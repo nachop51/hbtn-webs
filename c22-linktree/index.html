@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Demoday portfolio projects of Cohort 22 - Holberton School Uruguay">
+  <meta name="keywords" content="Portfolio, C22, Holberton, Uruguay">
+  <meta name="author" content="Holberton Uruguay">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://holbertonschool.uy/c22-demoday/">
+
+  <meta name="og:title" content="C22 - Portfolio projects. Holberton School Uruguay">
+  <meta name="og:description" content="Demoday portfolio projects of Cohort 22 - Holberton School Uruguay">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://holbertonschool.uy/c22-demoday/">
+  <meta name="og:image" content="https://holbertonschool.uy/c22-demoday/images/holberton_logo.jpg">
+
+  <title>C22 - Portfolio projects. Holberton School Uruguay</title>
+
+  <!-- Favicon & CSS -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css" />
+  <!-- <link rel="stylesheet" href="css/outputdev.css" /> -->
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="layout">
+    <header class="header">
+      <img class="hb-logo" src="./images/holberton_logo.jpg" alt="Holberton Logo" />
+      <h1 class="heading-primary">C22 Portfolio Projects</h1>
+      <p class="description-text">
+        Thank you for being part of this new edition of the Demo day
+        at
+        <a href="https://holbertonschool.uy" class="description-link" target="_blank" rel="noreferrer">
+          Holberton Uruguay.
+        </a>
+        Follow and discover more about the #C22 projects and get to know their developers better through the following
+        links.
+      </p>
+    </header>
+    <main class="main">
+      <section class="groups" style="grid-template-rows: 1fr !important">
+
+      </section>
+    </main>
+  </div>
+
+  <script type="module">
+    const content = [
+      {
+        title: 'Petra Mobile',
+        description: 'Desarrollo de la versión móvil de la tienda en línea de Petra para mejorar la experiencia de compra desde dispositivos móviles.',
+        link: 'https://petramobileport.com/',
+        image: './images/petra.png'
+      },
+      {
+        title: 'Warded',
+        description: 'App móvil que crea comunidades seguras mediante grupos privados, compartiendo ubicaciones y enviando alertas en tiempo real.',
+        link: 'https://german1127.github.io',
+        image: './images/warded.png'
+      },
+      {
+        title: 'Relit',
+        description: 'Desarrollo de una herramienta multiempresa para gestionar y controlar personal tercerizado, mejorando la eficiencia entre proveedores, clientes y el equipo de control.',
+        link: 'https://relit-project.github.io/relitgroup/',
+        image: './images/relit.png'
+      },
+      {
+        title: 'Tribu',
+        description: 'Red social para facilitar interacciones entre músicos y productores, permitiéndoles mostrar su trabajo y generar contactos laborales.',
+        link: 'https://jotalgs.github.io/tribu.land/',
+        image: './images/tribu.png'
+      },
+    ]
+
+    function createArticles() {
+      const articles = []
+      const groups = document.querySelector('.groups')
+
+      content.forEach((item) => {
+        const article = document.createElement('article')
+        article.innerHTML = `
+          <a href="${item.link}" class="card" target="_blank" rel="noreferrer" title="${item.title} project">
+            <div class="card-image">
+              <img src="${item.image}" alt="${item.title} project logo" title="${item.title} project logo" />
+            </div>
+            <div class="card-text">
+              <h2>${item.title}</h2>
+              <p class="card-text">${item.description}</p>
+            </div>
+          </a>
+        `
+        articles.push(article)
+      })
+
+      articles.forEach((article) => {
+        groups.appendChild(article)
+      })
+    }
+
+    createArticles()
+  </script>
+</body>
+
+</html>
