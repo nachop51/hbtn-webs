@@ -275,11 +275,6 @@ body {
   border-radius: 1rem;
 }
 
-.card-image img {
-  filter: invert(81%) sepia(90%) saturate(6476%) hue-rotate(337deg)
-    brightness(85%) contrast(110%);
-}
-
 .card-text {
   flex: 8;
   font-size: 0.75rem;
@@ -873,4 +868,8 @@ video {
 
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }

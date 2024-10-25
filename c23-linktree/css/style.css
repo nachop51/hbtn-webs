@@ -124,11 +124,6 @@ body {
   @apply aspect-square min-w-[50px] flex-1  rounded-2xl;
 }
 
-.card-image img {
-  filter: invert(81%) sepia(90%) saturate(6476%) hue-rotate(337deg)
-    brightness(85%) contrast(110%);
-}
-
 .card-text {
   @apply flex-[8] text-xs font-medium leading-4 text-gray-700;
   @apply md:text-xs md:leading-5;
