@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/outputdev.css --watch",
     "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/outputdev.css",
-    "prefix": "postcss --use autoprefixer -b 'last 4 versions' ./css/outputdev.css -o css/output.css",
-    "minify": "postcss ./css/output.css > ./css/style.min.css",
-    "build": "pnpm run tailwind && pnpm run prefix && pnpm run minify"
+    "prefix-and-minify": "postcss --use autoprefixer -b 'last 20 versions' --use cssnano -b '' ./css/outputdev.css -o css/style.min.css",
+    "build": "pnpm run tailwind && pnpm run prefix-and-minify"
   },
   "keywords": [],
   "author": "",
